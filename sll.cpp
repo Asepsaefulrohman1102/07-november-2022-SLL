@@ -145,14 +145,23 @@ void List::deleteBelakang(List *L)
 	}
 	else
 	{
-		P=First(*L);
-		while (Next(Next(P))!=Nil)
+		if (Next(First(*L))==Nil)
 		{
-			P=Next(P);
+			P=First(*L);
+			First(*L)=Nil;
+			Dealokasi(&P);
 		}
-		address Q;
-		Q=Next(P);
-		Next(P)=Nil;
-		Dealokasi(&Q);
+		else
+		{
+			address Q;
+			Q=First(*L);
+			while (Next(Next(Q))!=Nil)
+			{
+				Q=Next(Q);
+			}
+			P=Next(Q);
+			Next(Q)=Nil;
+			Dealokasi(&P);
+		}
 	}
 }
