@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1667790032 source:e:\c++\07 november 2022 sll\main.cpp
+1667908932 source:e:\c++\07 november 2022 sll\main.cpp
 	"sll.hpp"
 
-1667789759 e:\c++\07 november 2022 sll\sll.hpp
+1667904640 e:\c++\07 november 2022 sll\sll.hpp
 	<iostream>
 
-1667790288 source:e:\c++\07 november 2022 sll\sll.cpp
+1668300889 source:e:\c++\07 november 2022 sll\sll.cpp
 	"sll.hpp"
 

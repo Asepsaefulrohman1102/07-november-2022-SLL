@@ -21,7 +21,10 @@ typedef struct List {
     address Alokasi(infotype X);
     void Dealokasi(address *P);
     void insertDepan(List *L,infotype databaru);
+    void insertBelakang(List *L, infotype databaru);
     void PrintInfo(List info);
+    void deleteDepan(List *L);
+    void deleteBelakang(List *L);
 };
 
 

@@ -1,15 +1,19 @@
 #include "sll.hpp"
 
-//membuat head/first bernilai NULL/Nil
-//memakai bintang untuk mengubah isi list
-bool List::ListEmpty(List L) {
-	return First(L) == Nil; //pengosongan memori
+//cek list kosong
+bool List::ListEmpty(List L){
+	if (L.First == NULL){
+		return true;
+	}else{
+		return false;
+	}
 }
 
 //untuk mengecek apakah list kosong
 void List::CreateList(List *L) {
 	First(*L) = Nil;
 }
+
 
 //Alokasi dipanggil saat ada penambahan element
 address List::Alokasi(infotype X) {
@@ -55,6 +59,100 @@ void List::PrintInfo(List L) {
 	}
 }
 
+//dealokasi dipanggil saat ada penghapusan element
 void List::Dealokasi(address *P) {
 	free(*P);
+}
+
+//insert belakang
+void List::insertBelakang(List *L, infotype databaru)
+{
+	address P;
+	P=Alokasi(databaru);
+	if (ListEmpty(List (*L)))
+	{ // kosong
+		//head = baru;
+		First(*L)=P;
+	}
+	else
+	{ // isi
+		//baru->next = head;
+		address Q;
+		Q=First(*L);
+		while (Next(Q)!=Nil)
+		{
+			Q=Next(Q);
+		}
+		Next(Q)=P;
+	}
+}
+
+
+void List::deleteDepan(List *L)
+{
+	address P;
+	if (ListEmpty(List (*L)))
+	{
+		cout<<"List Kosong"<<endl;
+	}
+	else
+	{
+		P=First(*L);
+		First(*L)=Next(P);
+		Next(P)=Nil;
+		Dealokasi(&P);
+	}
+}
+
+// void TNode::hapusBelakang()
+// {
+// 	TNode *hapus, *bantu;
+// 	int d;
+// 	if (isEmpty() == 0)
+// 	{
+// 		if (head->next != NULL)
+// 		{
+// 			bantu = head;
+// 			while (bantu->next->next != NULL)
+// 			{
+// 				bantu = bantu->next;
+// 			}
+// 			hapus = bantu->next;
+// 			d = hapus->data;
+// 			bantu->next = NULL;
+// 			delete hapus;
+// 		}
+// 		else
+// 		{
+// 			d = head->data;
+// 			head = NULL;
+// 		}
+// 		cout << d << " terhapus" << endl;
+// 	}
+// 	else
+// 	{
+// 		cout << "List kosong" << endl;
+// 	}
+// }
+
+//membuat delete belakang dengan prinsip sama dengan diatas
+void List::deleteBelakang(List *L)
+{
+	address P;
+	if (ListEmpty(List (*L)))
+	{
+		cout<<"List Kosong"<<endl;
+	}
+	else
+	{
+		P=First(*L);
+		while (Next(Next(P))!=Nil)
+		{
+			P=Next(P);
+		}
+		address Q;
+		Q=Next(P);
+		Next(P)=Nil;
+		Dealokasi(&Q);
+	}
 }
