@@ -46,6 +46,8 @@ int main(){
 	L.deleteBelakang(&L);
 	L.PrintInfo(L);
 	cout << endl;
+	L.deleteBelakang(&L);
+	L.PrintInfo(L);
 	cout << endl;
 	cout << "List Kosong : " << L.ListEmpty(L) << endl;
 
