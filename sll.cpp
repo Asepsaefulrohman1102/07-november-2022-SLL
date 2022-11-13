@@ -104,38 +104,7 @@ void List::deleteDepan(List *L)
 	}
 }
 
-// void TNode::hapusBelakang()
-// {
-// 	TNode *hapus, *bantu;
-// 	int d;
-// 	if (isEmpty() == 0)
-// 	{
-// 		if (head->next != NULL)
-// 		{
-// 			bantu = head;
-// 			while (bantu->next->next != NULL)
-// 			{
-// 				bantu = bantu->next;
-// 			}
-// 			hapus = bantu->next;
-// 			d = hapus->data;
-// 			bantu->next = NULL;
-// 			delete hapus;
-// 		}
-// 		else
-// 		{
-// 			d = head->data;
-// 			head = NULL;
-// 		}
-// 		cout << d << " terhapus" << endl;
-// 	}
-// 	else
-// 	{
-// 		cout << "List kosong" << endl;
-// 	}
-// }
 
-//membuat delete belakang dengan prinsip sama dengan diatas
 void List::deleteBelakang(List *L)
 {
 	address P;
